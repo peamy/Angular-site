@@ -36,14 +36,14 @@
 <table class="table">
 <thead>
   <tr>
-    <th>name</th><th>email</th><th>age</th>
+    <th>name</th><th>age</th><th>email</th>
   </tr>
 </thead>
 <tbody>
   <tr ng-repeat="friend in friendList">
     <td>{{friend.name}}</td>
+    <td>{{friend.age}}</td>    
     <td>{{friend.email}}</td>
-    <td>{{friend.age}}</td>
     <td><button type="submit" class="btn btn-danger" ng-click="removeFriend(selectedPlayer, friend)">unfriend</button></td>
   </tr>
 </tbody>

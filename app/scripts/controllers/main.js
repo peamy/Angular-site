@@ -14,6 +14,6 @@ angular.module('yoApplicationApp')
       'AngularJS',
       'Karma'
     ];
-
     $scope.hello = "hello all!";//playerService.hello();
+
   });
