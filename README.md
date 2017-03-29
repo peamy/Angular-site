@@ -9,4 +9,4 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing
 
-Running `karma statrt` will run the unit tests with karma.
+Running `karma start` will run the unit tests with karma.
