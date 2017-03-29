@@ -15,7 +15,7 @@ angular.module('yoApplicationApp')
       'Karma'
     ];
 
-    $scope.headText = "These our all of our users goals!";
+    $scope.headText = "These are all of the players goals!";
     $scope.extraFilter = "";
 
 
