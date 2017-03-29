@@ -15,7 +15,7 @@ angular.module('yoApplicationApp').service('playerService', function() {
     }
     else {
     localPlayers = [
-  			{name:"Remco", age21, email:"12345678@test.nl", goals : [
+  			{name:"Remco", age:21, email:"12345678@test.nl", goals : [
           {name: "Finish SPA", category:"School",checked:true},
           {name: "Do a presentation about SPA", category:"School",checked:false},
           {name: "Make dummydata about the SPA project", category:"School",checked:true}
