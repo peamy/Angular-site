@@ -15,13 +15,18 @@ angular.module('yoApplicationApp').service('playerService', function() {
     }
     else {
     localPlayers = [
-  			{name:"Bob", age:18, email:"bob@bob.nl", goals : [
-          {name: "kaas", category:"Groceries",checked:false},
-          {name: "Banaan", category:"Groceries",checked:false}
+  			{name:"Remco", age21, email:"12345678@test.nl", goals : [
+          {name: "Finish SPA", category:"School",checked:true},
+          {name: "Do a presentation about SPA", category:"School",checked:false},
+          {name: "Make dummydata about the SPA project", category:"School",checked:true}
         ]},
-  			{name:"Betty", age:22, email:"betty@betty.bet", goals : [
-          {name: "Huiswerk", category:"School",checked:false},
-          {name: "API maken", category:"Work",checked:false}
+  			{name:"Betty", age:22, email:"betty@mail", goals : [
+          {name: "Send an email to the boss", category:"Work",checked:false},
+          {name: "Drink coffee", category:"Work",checked:true}
+        ]},
+        {name:"Jack", age:25, email:"jack@dummydata.com", goals : [
+          {name: "Get bananas", category:"Groceries",checked:false},
+          {name: "Eat bananas", category:"Lunch",checked:false}
         ]}
   		];
       localStorage.setItem("players", JSON.stringify(localPlayers));
