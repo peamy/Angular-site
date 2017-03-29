@@ -1,0 +1,117 @@
+
+<h3>Player information of {{selectedPlayer.name}}</h3>
+<table class="table">
+<thead>
+  <tr>
+    <th>name</th><th>age</th><th>email</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span ng-hide="selectedPlayer.updating">{{selectedPlayer.name}}</span>
+      <input type="text" ng-model="selectedPlayer.name" ng-show="selectedPlayer.updating">
+    </td>
+    <td>
+      <span ng-hide="selectedPlayer.updating">{{selectedPlayer.age}}</span>
+      <input type="number" ng-model="selectedPlayer.age" ng-show="selectedPlayer.updating">
+    </td>
+    <td>
+      <span>{{selectedPlayer.email}}</span>
+      <!--<span ng-hide="player.updating">{{player.email}}</span>
+      <input type="text" ng-model="player.email" ng-show="player.updating">-->
+    </td>
+    <td>
+      <div ng-repeat="task in selectedPlayer.tasks">{{task.name}}</div>
+    </td>
+    <td>
+      <button class="btn btn-warning" ng-click="selectedPlayer.updating=true;" ng-hide="selectedPlayer.updating">update</button>
+
+      <button class="btn btn-success" ng-click="selectedPlayer.updating=false;savePlayers();" ng-show="selectedPlayer.updating">save</button>
+    </td>
+  </tr>
+</tbody>
+</table>
+<h4>Friends</h4>
+<table class="table">
+<thead>
+  <tr>
+    <th>name</th><th>email</th><th>age</th>
+  </tr>
+</thead>
+<tbody>
+  <tr ng-repeat="friend in friendList">
+    <td>{{friend.name}}</td>
+    <td>{{friend.email}}</td>
+    <td>{{friend.age}}</td>
+    <td><button type="submit" class="btn btn-danger" ng-click="removeFriend(selectedPlayer, friend)">unfriend</button></td>
+  </tr>
+</tbody>
+</table>
+<br>
+<form>
+  <div class="form-group">
+<select class="form-control" ng-model="selectedPlayerFriendlistEmail">
+  <option ng-repeat="player2 in playerList | filter: friendFilter(player2)" ng-click="newFriendInfoSelected()" value="{{player2.email}}">{{player2.name}}</option>
+</select>
+</div>
+<button type="button" class="btn btn-success" ng-click="addFriend(selectedPlayer, selectedPlayerFriendlist)">Add friend</button>
+</form>
+<br/>
+
+<br/>
+<hr>
+<h4>Goals</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Goal</th><th>Category</th><th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        <!-- FOREACH item IN items -->
+    <tr ng-repeat="goal in selectedPlayer.goals track by goal.name">
+      <td>
+        {{goal.name}}
+      </td>
+      <td>
+        {{goal.category}}
+      </td>
+      <td>
+        <input type="checkbox" ng-model="goal.checked" ng-disabled=true>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+<br/>
+<hr>
+<h4>Scores</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Difficulty</th><th>Amount of guesses</th><th>Number to guess</th>
+    </tr>
+  </thead>
+  <tbody>
+        <!-- FOREACH item IN items -->
+    <tr ng-repeat="score in selectedPlayer.scores">
+      <td>
+        {{score.difficulty}}
+      </td>
+      <td>
+        {{score.amountOfGuesses}}
+      </td>
+      <td>
+        {{score.numberToGuess}}
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<button type="button" ng-show="selectedPlayer.scores!==undefined&&selectedPlayer.scores.length>0" class="btn btn-danger" ng-click="clearScore(selectedPlayer)">Clear scores</button>
+</div>
+<br/><br/>

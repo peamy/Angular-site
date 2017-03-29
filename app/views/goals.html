@@ -1,0 +1,71 @@
+<h2>{{headText}}</h2>
+<br>
+<div class="col-lg-6">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+    <input type="hidden" class="form-control" ng-model="extraFilter"> <!-- this shouldnt be done like this, but dont know how else to get scope variable in filter-->
+  </div>
+</div>
+
+<br><br/>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th><th>Goal</th><th>Category</th><th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        <!-- FOREACH item IN items -->
+    <tr ng-repeat="item in newItems | filter: searchTerm track by item.name">
+      <td>
+        {{item.player}}
+      </td>
+      <td>
+                <span ng-hide="item.updating">{{item.name}}</span>
+                <input type="text" ng-model="item.name" ng-show="item.updating">
+
+            </td>
+            <td ng-class="{groceries: item.category==='Groceries', work: item.category==='Work', school: item.category==='School'}">
+
+                {{item.category}}
+
+            </td>
+            <td>
+                <input type="checkbox" ng-model="item.checked" ng-disabled="!item.updating">
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" ng-click="item.updating=false;saveItems();" ng-show="item.updating">Save</button>
+
+                <button type="button" class="btn btn-warning" ng-click="item.updating=true;" ng-hide="item.updating">Update</button>
+
+                <button type="button" class="btn btn-danger" ng-click="deleteItem(item)">Delete</button>
+            </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<hr>
+
+<form>
+<div class="form-group">
+  <label for="itemInput">Should do item</label>
+  <input type="text" class="form-control" id="itemInput" placeholder="item ..." ng-model="newItem.name">
+</div>
+<div class="form-group">
+  <select class="form-control" ng-model="newItem.category">
+    <option ng-repeat="cat in categories" value="{{cat}}">{{cat}}</option>
+  </select>
+</div>
+<div class="form-group">
+  <select class="form-control" ng-model="selectedPlayerEmail">
+    <option ng-repeat="player in playerList" value="{{player.email}}">{{player.name}}</option>
+  </select>
+</div>
+<div class="form-group">
+  <button type="submit" class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+</div>
+</form>
+<br/>

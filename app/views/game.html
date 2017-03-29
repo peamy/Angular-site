@@ -1,0 +1,36 @@
+<h2>Welcome to the game</h2>
+<br/>
+<br/>
+<form>
+  <div class="form-group">
+    <p>Who are you?</p>
+    <select class="form-control" ng-disabled="inGame" ng-model="selectedPlayerEmail">
+      <option ng-repeat="player in playerList" ng-click="playerInfoSelected()" value="{{player.email}}">{{player.name}}</option>
+    </select>
+</div>
+  <div class="form-group">
+    <p>Difficulty</p>
+    <select class="form-control" ng-disabled="inGame">
+      <option ng-repeat="difficulty in difficulties" value="difficulty" ng-click="setDifficulty(difficulty)">{{difficulty}}</option>
+    </select>
+  </div>
+  <button type="button" class="btn btn-success" ng-click="start()"ng-disabled="inGame||selectedPlayer===undefined">Start</button>
+</form>
+<br/>
+<hr>
+<p>{{youAreGuessing}}</p>
+<br/>
+<br/>
+<form>
+  <div class="form-group">
+    <input type="number" class="form-control" ng-disabled="inGame===false" placeholder="number ..." ng-model="guessingNumber">
+  </div>
+<button type="sumbit" class="btn btn-success" ng-disabled="inGame===false" ng-click="guess()">guess!</button>
+<br/>
+</form>
+<p ng-show="inGame">Guesses: {{amountOfGuesses}}</p>
+<br/>
+<p>{{guessMessage}}</p>
+
+<br/>
+<br/>
