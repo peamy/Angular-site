@@ -6,13 +6,13 @@ describe('yoApplicationApp', function() {
 
   it('should display a list goals', function() {
     var rows = element.all(by.repeater('item in newItems')).count();
-    expect(rows).toBe(4);
+    expect(rows).toBe(7);
   });
 
   it('should display a filtered list goals', function() {
-    element(by.model('searchTerm')).sendKeys("Bob");
+    element(by.model('searchTerm')).sendKeys("Remco");
     var rows = element.all(by.repeater('item in newItems')).count();
-    expect(rows).toBe(2);
+    expect(rows).toBe(3);
   });
 
 });

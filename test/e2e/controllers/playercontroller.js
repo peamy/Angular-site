@@ -6,7 +6,7 @@ describe('yoApplicationApp', function() {
 
   it('should display a list of players', function() {
     var rows = element.all(by.repeater('player1 in playerList')).count();
-    expect(rows).toBe(2);
+    expect(rows).toBe(3);
   });
 
 //this is not working rip
@@ -19,7 +19,7 @@ describe('yoApplicationApp', function() {
     element(by.css('button#form-submit')).click();
 
     var rows = element.all(by.repeater('player1 in playerList')).count();
-    expect(rows).toBe(3);
+    expect(rows).toBe(4);
   });
 
 });
