@@ -52,7 +52,7 @@
 <form>
   <div class="form-group">
 <select class="form-control" ng-model="selectedPlayerFriendlistEmail">
-  <option ng-repeat="player2 in playerList | filter: friendFilter(selectedPlayer, player2)" value="{{player2.email}}">{{player2.name}}</option>
+  <option ng-repeat="player2 in playerList | friendfilter: selectedPlayer" value="{{player2.email}}">{{player2.name}}</option>
 </select>
 </div>
 <button type="button" class="btn btn-success" ng-click="newFriendInfoSelected();addFriend(selectedPlayer, selectedPlayerFriendlist)">Add friend</button>

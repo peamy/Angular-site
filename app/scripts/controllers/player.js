@@ -70,25 +70,5 @@ angular.module('yoApplicationApp')
 
         $scope.calculateFriendList();
 
-        //returns only friends that are not in the selected friends list, or the person him/herself
-        $scope.friendFilter = function(selectedplayer, player)
-        {
-          return function(player)
-          {
-            var shouldReturn = true;
-            if(selectedplayer === undefined || player.email === selectedplayer.email)
-            {
-              shouldReturn = false;
-            }
-            if(player.friends !== undefined) {
-              player.friends.forEach(function(e, i) {
-                if(selectedplayer !== undefined && e.email === selectedplayer.email)
-                {
-                  shouldReturn = false;
-                }
-              })
-            }
-            return shouldReturn;
-          }
-        }
+
   })
