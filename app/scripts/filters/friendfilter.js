@@ -4,8 +4,16 @@ angular.module('yoApplicationApp').filter('friendfilter', function() {
       if(player !== undefined) {
         input.forEach(function(e) {
           var inFriendList=false;
+          if( e.email === player.email)
+          {
+            inFriendList = true;
+          }
+          if(player.friends === undefined)
+          {
+            player.friends = [];
+          }
           player.friends.forEach(function(f, i) {
-            if(e.email === f.email || e.email === player.email)
+            if(e.email === f.email)
             {
               inFriendList = true;
             }
