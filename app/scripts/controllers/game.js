@@ -18,7 +18,6 @@ angular.module('yoApplicationApp')
     $scope.playerList = playerService.allPlayers();
 
     $scope.inGame = false;
-    $scope.noPlayerSelected=true;
 
     $scope.difficulty = "easy";
 
