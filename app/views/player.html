@@ -42,7 +42,7 @@
 <tbody>
   <tr ng-repeat="friend in friendList">
     <td>{{friend.name}}</td>
-    <td>{{friend.age}}</td>    
+    <td>{{friend.age}}</td>
     <td>{{friend.email}}</td>
     <td><button type="submit" class="btn btn-danger" ng-click="removeFriend(selectedPlayer, friend)">unfriend</button></td>
   </tr>
@@ -52,10 +52,10 @@
 <form>
   <div class="form-group">
 <select class="form-control" ng-model="selectedPlayerFriendlistEmail">
-  <option ng-repeat="player2 in playerList | filter: friendFilter(selectedPlayer, player2)" ng-click="newFriendInfoSelected()" value="{{player2.email}}">{{player2.name}}</option>
+  <option ng-repeat="player2 in playerList | filter: friendFilter(selectedPlayer, player2)" value="{{player2.email}}">{{player2.name}}</option>
 </select>
 </div>
-<button type="button" class="btn btn-success" ng-click="addFriend(selectedPlayer, selectedPlayerFriendlist)">Add friend</button>
+<button type="button" class="btn btn-success" ng-click="newFriendInfoSelected();addFriend(selectedPlayer, selectedPlayerFriendlist)">Add friend</button>
 </form>
 <br/>
 
