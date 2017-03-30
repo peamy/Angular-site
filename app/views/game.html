@@ -29,8 +29,8 @@
 <button type="sumbit" class="btn btn-success" ng-disabled="inGame===false" ng-click="guess();">guess!</button>
 <br/>
 </form>
-<p ng-show="inGame">Guesses: {{amountOfGuesses}}</p>
 <br/>
+<p ng-show="inGame===true || endGame === true">Guesses: {{amountOfGuesses}}</p>
 <p>{{guessMessage}}</p>
 
 <br/>

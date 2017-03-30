@@ -18,6 +18,7 @@ angular.module('yoApplicationApp')
     $scope.playerList = playerService.allPlayers();
 
     $scope.inGame = false;
+    $scope.endGame = false;
 
     $scope.difficulty = "easy";
 
@@ -99,6 +100,7 @@ angular.module('yoApplicationApp')
            amountOfGuesses: $scope.amountOfGuesses,
            numberToGuess: $scope.numberToGuess});
       $scope.inGame = false;
+      $scope.endGame = true;
     }
 
     $scope.playerInfoSelected = function()
