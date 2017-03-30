@@ -38,17 +38,6 @@ angular.module('yoApplicationApp')
       return Math.floor(Math.random() * (maxSize-1) + 1);
     }
 
-    $scope.setDifficulty = function(diff)
-    {
-      if(diff !== undefined && diff.length > 0)
-      {
-        $scope.difficulty = diff;
-      }
-      else {
-        diff="easy";
-      }
-    }
-
     $scope.start = function()
     {
       $scope.playerInfoSelected();

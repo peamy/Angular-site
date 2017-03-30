@@ -10,14 +10,13 @@
   </div>
   <div class="form-group">
     <p>Difficulty</p>
-    <select class="form-control" ng-disabled="inGame">
-      <option ng-repeat="difficulty in difficulties" value="difficulty" ng-click="setDifficulty(difficulty)">{{difficulty}}</option>
+    <select class="form-control" ng-model="difficulty" ng-disabled="inGame">
+      <option ng-repeat="difficulty in difficulties">{{difficulty}}</option>
     </select>
   </div>
   <button type="button" class="btn btn-success" ng-click="start();"ng-disabled="inGame||selectedPlayerEmail===undefined">Start</button>
 </form>
 <br/>
-{{selectedPlayer.name}}
 <hr>
 <p>{{youAreGuessing}}</p>
 <br/>
