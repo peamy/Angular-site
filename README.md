@@ -10,3 +10,5 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `karma start` will run the unit tests with karma.
+
+(Testing doesn't work if angular is not present.)
