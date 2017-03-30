@@ -18,6 +18,7 @@ angular.module('yoApplicationApp')
     $scope.playerList = playerService.allPlayers();
 
     $scope.inGame = false;
+    $scope.noPlayerSelected=true;
 
     $scope.difficulty = "easy";
 
@@ -50,6 +51,7 @@ angular.module('yoApplicationApp')
 
     $scope.start = function()
     {
+      $scope.playerInfoSelected();
       if($scope.difficulty === "easy")
       {
         $scope.numberToGuess = $scope.randomNumber(50);
