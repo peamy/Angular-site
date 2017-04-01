@@ -18,7 +18,7 @@
   <tbody>
 
         <!-- FOREACH item IN items -->
-    <tr ng-repeat="item in newItems | filter: searchTerm track by item.name">
+    <tr ng-repeat="item in newItems | filter: searchTerm">
       <td>
         {{item.player}}
       </td>

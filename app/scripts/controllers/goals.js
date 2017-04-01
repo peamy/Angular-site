@@ -40,7 +40,7 @@ angular.module('yoApplicationApp')
 
   		var deleteIndex = -1;
   		$scope.newItems.forEach(function(e, i) {
-  			if(e.name === item.name) {
+  			if(e.name === item.name && item.category === e.category && item.player === e.player) {
   				deleteIndex = i;
   			}
   		});
@@ -61,17 +61,9 @@ angular.module('yoApplicationApp')
 
   	$scope.saveNewItem = function() {
 
-      var canAdd = true;
-      $scope.newItems.forEach(function(e){
-        if(e.name === $scope.newItem.name)
-        {
-          canAdd = false;
-        }
-      })
-
       $scope.playerList.forEach(function(e, i) {
 
-        if(e.email === $scope.selectedPlayerEmail && $scope.newItem.name != undefined && canAdd === true)
+        if(e.email === $scope.selectedPlayerEmail && $scope.newItem.name != undefined)
         {
           $scope.itemToAdd = {
       			name: $scope.newItem.name,
