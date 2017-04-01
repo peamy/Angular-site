@@ -25,7 +25,15 @@ angular.module('yoApplicationApp')
 
     $scope.saveNewPlayer = function()
     {
-      if($scope.newPlayer!=undefined && $scope.newPlayer.name!=undefined && $scope.newPlayer.email!=undefined && $scope.newPlayer.age!=undefined) {
+      var canAdd = true;
+      $scope.playerList.forEach(function(e){
+        if(e.email === $scope.newPlayer.email)
+        {
+          canAdd = false;
+        }
+      })
+
+      if($scope.newPlayer!=undefined && $scope.newPlayer.name!=undefined && $scope.newPlayer.email!=undefined && $scope.newPlayer.age!=undefined && canAdd) {
 
         $scope.playerList = playerService.addPlayer({
           name: $scope.newPlayer.name,

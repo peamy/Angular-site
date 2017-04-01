@@ -61,8 +61,17 @@ angular.module('yoApplicationApp')
 
   	$scope.saveNewItem = function() {
 
+      var canAdd = true;
+      $scope.newItems.forEach(function(e){
+        if(e.name === $scope.newItem.name)
+        {
+          canAdd = false;
+        }
+      })
+
       $scope.playerList.forEach(function(e, i) {
-        if(e.email === $scope.selectedPlayerEmail && $scope.newItem.name != undefined)
+
+        if(e.email === $scope.selectedPlayerEmail && $scope.newItem.name != undefined && canAdd === true)
         {
           $scope.itemToAdd = {
       			name: $scope.newItem.name,
