@@ -2,17 +2,14 @@
 
 describe('Controller: GameCtrl', function () {
 
-  // load the controller's module
   beforeEach(module('yoApplicationApp'));
   var GameCtrl,
     scope;
 
-  // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     GameCtrl = $controller('GameCtrl', {
       $scope: scope
-      // place here mocked dependencies
     });
   }));
 
@@ -58,18 +55,5 @@ describe('Controller: GameCtrl', function () {
     expect(scope.numberToGuess).toBeLessThan(51);
     expect(scope.numberToGuess).toBeGreaterThan(0);
   });
-
-//Hoe kan ik playerService mocken?
-/*
-  it('should not be inGame after endGame() is called', function () {
-    scope.start();
-    expect(scope.inGame).toBe(true);
-    scope.endGame();
-    expect(scope.inGame).toBe(false);
-
-  });
-  */
-
-
 
 });

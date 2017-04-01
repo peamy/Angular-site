@@ -25,6 +25,12 @@ describe('Filter: friendfilter', function() {
               {name: "Eat bananas", category:"Lunch",checked:false}
             ]};
     });
+
+    /*Note: some if these tests don't really do much.
+    *Those tests were made to test the testing.
+    *I did this because I was uncertain if things would work.
+    *I did not have any experience in testing with javascript.
+    */
     it('should run this file without errors', function() {
         expect(1).toBe(1);
     });
