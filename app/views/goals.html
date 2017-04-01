@@ -18,9 +18,9 @@
   <tbody>
 
         <!-- FOREACH item IN items -->
-    <tr ng-repeat="item in newItems | filter: searchTerm">
+    <tr ng-repeat="item in newItems | filter: searchTerm track by itemTracker(item)">
       <td>
-        {{item.player}}
+        <a ng-href="#!/player/{{item.playerEmail}}">{{item.player}}</a>
       </td>
       <td>
                 <span ng-hide="item.updating">{{item.name}}</span>

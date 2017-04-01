@@ -31,6 +31,7 @@ angular.module('yoApplicationApp')
 
       e.goals.forEach(function(f){
           f.player = e.name;
+          f.playerEmail = e.email;
           $scope.newItems.push(f);
 
       })
@@ -69,7 +70,8 @@ angular.module('yoApplicationApp')
       			name: $scope.newItem.name,
       			category: $scope.newItem.category,
       			checked: false,
-            player: e.name
+            player: e.name,
+            playerEmail : e.email
       		}
 
           if(e.goals === undefined) {
@@ -103,6 +105,10 @@ angular.module('yoApplicationApp')
     $scope.saveItems = function()
     {
       playerService.savePlayers($scope.playerList);
+    }
+
+    $scope.itemTracker= function(item) {
+      return item.name + item.category + item.playerEmail;
     }
 
   });
