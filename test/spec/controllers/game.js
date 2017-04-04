@@ -38,7 +38,8 @@ describe('Controller: GameCtrl', function () {
   });
 
   it('should change the difficulty', function () {
-    scope.setDifficulty("hard");
+    //scope.setDifficulty("hard");
+    scope.difficulty="hard";
     expect(scope.difficulty).toBe("hard");
   });
 
@@ -50,7 +51,8 @@ describe('Controller: GameCtrl', function () {
 
   it('should change the numberToGuess after starting a game', function () {
     expect(scope.numberToGuess).toBe(0);
-    scope.setDifficulty("easy");
+    //scope.setDifficulty("easy");
+    scope.difficulty="easy";
     scope.start();
     expect(scope.numberToGuess).toBeLessThan(51);
     expect(scope.numberToGuess).toBeGreaterThan(0);
